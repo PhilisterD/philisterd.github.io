@@ -1,26 +1,30 @@
 // api.js
-const express = require('express');
-const { OpenAIApi } = require('openai');
 
-const app = express();
-app.use(express.json());
+const BASE_URL = 'https://api.openai.com/v1/chat/completions';  // ChatGPT API URL
+const API_KEY = process.env.OPENAI_API_KEY;  // Access the environment variable
 
-app.post('/api/chat', async (req, res) => {
+async function callChatGPT(prompt) {
+  const data = {
+    model: 'gpt-3.5-turbo',
+    messages: [{ role: 'system', content: 'You are a helpful assistant.' }, { role: 'user', content: prompt }]
+  };
+
   try {
-    const userInput = req.body.message;
-    const openai = new OpenAIApi({ key: process.env.OPENAI_API_KEY });
-    const response = await openai.complete({
-      prompt: userInput,
-      max_tokens: 50
+    const response = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`  // Use the environment variable
+      },
+      body: JSON.stringify(data)
     });
 
-    res.json({ message: response.choices[0].text.trim() });
+    const responseData = await response.json();
+    return responseData.choices[0].message.content;
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'An error occurred' });
+    console.error('Error calling ChatGPT API:', error);
+    return 'An error occurred while processing your request.';
   }
-});
+}
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
+export { callChatGPT };
