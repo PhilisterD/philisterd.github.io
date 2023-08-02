@@ -20,6 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install express
+        run: npm install axios
 
       - name: Call ChatGPT API
         env:
