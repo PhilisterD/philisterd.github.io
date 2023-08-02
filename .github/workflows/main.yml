@@ -19,8 +19,9 @@ jobs:
           node-version: '14'
 
       - name: Install dependencies
-        run: npm install express
-        run: npm install axios
+        run: |
+          npm install express
+          npm install axios
 
       - name: Call ChatGPT API
         env:
