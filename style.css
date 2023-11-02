@@ -9,6 +9,7 @@ body {
     flex-direction: column;
     background-color: #030303;
     font-family: "Poppins", sans-serif;
+    align-self: center;
     margin: 0;
 }
 
@@ -30,7 +31,8 @@ section {
 h1{
     color: whitesmoke;
     align-self: center;
-    margin-left: 28rem;
+    /* margin-left: 28rem; */
+    margin: 0 auto
 }
 
 
