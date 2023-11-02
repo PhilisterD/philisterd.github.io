@@ -19,9 +19,7 @@ header {
     display: flex;
 
 }
-main {
-    width: 100%;
-}
+
 
 section {
     width: 100%;
@@ -36,7 +34,7 @@ h1{
 }
 
 
-.search {
+/* .search {
     margin: 3rem;
     margin-left: 12rem;
     background-color: transparent;
@@ -46,16 +44,16 @@ h1{
     font-family: inherit;
     font-size: 1rem;
     padding: 0.5rem 1rem;
-}
+} */
 
-.search::placeholder {
+/* .search::placeholder {
     color: #7378c5;
 }
 
 .search:focus {
     background-color: #050505;
     outline: none;
-}
+} */
 
 div{
     display: flex;
