@@ -44,7 +44,7 @@ async function getMoviesList() {
 function getJson() {
     $.ajax({
         type: "GET",
-        url: "config.json",
+        url: "data.json",
         'async':false,
         dataType: "json",
         success: (res) => {
