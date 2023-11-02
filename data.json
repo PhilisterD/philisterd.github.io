@@ -1,0 +1,60 @@
+{
+  "adult": false,
+  "backdrop_path": "/t5zCBSB5xMDKcDqe91qahCOUYVV.jpg",
+  "belongs_to_collection": null,
+  "budget": 20000000,
+  "genres": [
+    {
+      "id": 27,
+      "name": "恐怖"
+    },
+    {
+      "id": 9648,
+      "name": "悬疑"
+    }
+  ],
+  "homepage": "",
+  "id": 507089,
+  "imdb_id": "tt4589218",
+  "original_language": "en",
+  "original_title": "Five Nights at Freddy's",
+  "overview": "保安Mike Schmidt（乔什·哈切森 Josh Hutcherson 饰）开始在Freddy Fazbear披萨店上夜班，却发现这趟夜班不会好过……",
+  "popularity": 6503.869,
+  "poster_path": "/bhOkllQ6A3DmQhPu0U07l6lElAK.jpg",
+  "production_companies": [
+    {
+      "id": 3172,
+      "logo_path": "/kDedjRZwO8uyFhuHamomOhN6fzG.png",
+      "name": "Blumhouse Productions",
+      "origin_country": "US"
+    },
+    {
+      "id": 211144,
+      "logo_path": null,
+      "name": "Scott Cawthon Productions",
+      "origin_country": "US"
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "release_date": "2023-10-25",
+  "revenue": 132700000,
+  "runtime": 110,
+  "spoken_languages": [
+    {
+      "english_name": "English",
+      "iso_639_1": "en",
+      "name": "English"
+    }
+  ],
+  "status": "Released",
+  "tagline": "",
+  "title": "玩具熊的五夜后宫",
+  "video": false,
+  "vote_average": 8.422,
+  "vote_count": 1140
+}

@@ -1,109 +1,121 @@
-html{
-    min-height: 100%;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+    box-sizing: border-box;
 }
 
-body{
-    min-height: 100%;
-    background-color: #2d3436;
-background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
-    text-align: center;
-   
+body {
+
+    background-color: #030303;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
 }
 
-.slider{
-    -webkit-appearance: none;
-    width: 70%;
-    height: 10px;
-    background: #f7be04;
-   border-radius: 15px;
-    opacity: 1;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-    margin-left: 40px;
-    margin-top: 25px;
-    margin-bottom: 20px;
-  }
-  
-  .slider:hover{
-    opacity: 0.5;
-  }
-  
-  .slider::-webkit-slider-thumb{
-     -webkit-appearance: none;
-    width: 15px;
-    height: 15px;
-    background: #000000;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-  .action-btn{
-    background-color: #000;
-    border: 0;
-    color: #f7be04;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 10px;
-    margin: 10px 20px;
-    border-radius: 15px;
-    font-family: fantasy;
-    opacity: 1;
-    transition: opacity .2s;
-  }
+header {
+    background-color: #363636;
+    display: flex;
 
-  .action-btn:hover{
-      opacity: 0.5;
-  }
+}
 
-  .wrapper{
-      display: flex;
-      background-color: rgb(253, 253, 252);
-      flex-direction: column;
-      width: 30%;
-      margin-top: 10%;
-      margin-left: 35%;
-      border-radius: 15px;
-      font-family: fantasy;
-      padding-bottom: 1%;
-  }
-  
-  .slider_main{
-      display: flex;
-      flex-direction: row;
-      }
-    
-    output{
-      margin-top: 20px;
-      margin-left: 10px;
-      }
+h1{
+    color: whitesmoke;
+    align-self: center;
+    margin-left: 28rem;
+}
 
-      .wrapper_main
-      {
-        display: flex;
-        background-color: rgb(253, 253, 252);
-        flex-direction: row;
-        width: 22%;
-        margin-top: 5%;
-        margin-left: 38%;
-        border-radius: 15px;
-        font-family: Georgia, serif;
-        padding-left: 45px;
-        
-      }
 
-      .clipboard{
-        margin-left: auto;
-        cursor: pointer;
-        border: 0;
-        background-color: white;
-        color:black;
-        border-radius: 15px;
-       font-size: 23px;
-       opacity: 1;
-       transition: opacity .2s;
-      
-      }
+.search {
+    margin: 3rem;
+    margin-left: 12rem;
+    background-color: transparent;
+    border: 2px solid #e9e9ec;
+    border-radius: 50px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
 
-      .clipboard:hover{
-          opacity: 0.5;
-      } 
+.search::placeholder {
+    color: #7378c5;
+}
+
+.search:focus {
+    background-color: #050505;
+    outline: none;
+}
+
+div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie {
+    background-color: #373b69;
+    border-radius: 3px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    margin: 1rem;
+    justify-content: center;
+    align-content: center;
+    width: 265px;
+}
+
+.movie img {
+    width: 100%;
+}
+
+.movie-info {
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-info h3 {
+    margin: 0;
+}
+
+.movie-info span {
+    background-color: #22254b;
+    border-radius: 3px;
+    font-weight: bold;
+    padding: 0.25rem 0.8rem;
+
+}
+.movie-info span.green {
+    color: rgb(39, 189, 39);
+}
+
+.movie-info span.orange {
+    color: orange;
+}
+
+.movie-info span.red {
+    color: rgb(189, 42, 42);
+}
+
+.overview {
+    background-color: #fff;
+    padding: 2rem;
+    position: absolute;
+    max-height: 100%;
+    overflow: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+
+.overview h3 {
+    margin-top: 0;
+}
+
+.movie:hover .overview {
+    transform: translateY(0);
+}
