@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* @font-face {
+  font-family: 'mi-sans';
+  src: url('https://pocket.haydenhayden.com/font/MiSans-Regular.ttf');
+  font-style: normal;
+} */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 90%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  .animate-spotlight {
+    animation: spotlight 2s ease .75s 1 forwards;
+  }
+
+  /* 博客文章样式 */
+  .prose {
+    @apply text-[#52525b] dark:text-[#aeaeb5];
+  }
+  .prose pre {
+    @apply w-full overflow-x-auto my-7;
+  }
+  .prose h2 {
+    @apply text-2xl font-semibold mt-20 mb-4 text-foreground;
+  }
+  .prose h2 code {
+    @apply text-2xl;
+  }
+  .prose h3 {
+    @apply text-xl font-semibold mt-8 mb-2 text-foreground;
+  }
+  .prose h3 code {
+    @apply text-xl;
+  }
+  .prose p {
+    @apply text-base leading-7 my-7 break-words;
+  }
+  .prose ul {
+    @apply list-disc list-inside my-8;
+  }
+  .prose ol {
+    @apply list-decimal list-inside my-8;
+  }
+  .prose li {
+    @apply text-base leading-7 my-1;
+  }
+  .prose li::marker {
+    @apply font-semibold;
+  }
+  .prose ul ul, .prose ol ol, .prose ul ol, .prose ol ul {
+    @apply ml-6 my-1;
+  }
+  .prose strong {
+    @apply text-[#1f1f22] dark:text-[#d6d6d8];
+  }
+  .prose img {
+    @apply mx-auto rounded;
+  }
+  .prose .two-columns-img p {
+    @apply flex flex-col md:flex-row md:justify-center items-center gap-4;
+  }
+  .prose .two-columns-img img {
+    @apply md:inline-block md:m-0;
+  }
+  .prose blockquote {
+    @apply border-l-4 border-colorful-500 dark:border-colorful-600 pl-4 pr-1 py-1 bg-colorful-50 dark:bg-colorful-950 dark:bg-opacity-70 rounded-tr rounded-br my-7;
+  }
+  /* ========= callout start ========= */
+  .prose .callout {
+    @apply rounded-md px-3 py-1 my-7;
+  }
+  .prose .callout .callout-title {
+    @apply flex items-center gap-2 text-lg font-bold my-3;
+  }
+  .prose .callout .callout-title .callout-title__icon svg {
+    @apply w-6 h-6;
+  }
+  .prose .callout .callout-content p {
+    @apply my-2 mx-1;
+  }
+  .prose .callout-note {
+    @apply bg-sky-50 dark:bg-sky-950;
+  }
+  .prose .callout-note .callout-title {
+    @apply text-sky-600;
+  }
+  .prose .callout-tip {
+    @apply bg-green-100 dark:bg-green-950;
+  }
+  .prose .callout-tip .callout-title {
+    @apply text-green-600;
+  }
+  .prose .callout-tip {
+    @apply bg-green-100 dark:bg-green-950;
+  }
+  .prose .callout-tip .callout-title {
+    @apply text-green-600;
+  }
+  .prose .callout-important {
+    @apply bg-purple-100 dark:bg-purple-950 dark:bg-opacity-70;
+  }
+  .prose .callout-important .callout-title {
+    @apply text-purple-600 dark:text-purple-500;
+  }
+  .prose .callout-warning {
+    @apply bg-amber-100 dark:bg-amber-950 dark:bg-opacity-80;
+  }
+  .prose .callout-warning .callout-title {
+    @apply text-amber-600;
+  }
+  .prose .callout-caution {
+    @apply bg-rose-100 dark:bg-rose-950 dark:bg-opacity-90;
+  }
+  .prose .callout-caution .callout-title {
+    @apply text-rose-600 dark:text-rose-500;
+  }
+  /* ========= callout end ========= */
+  .prose .code-block .code-container>code {
+    @apply flex flex-col w-fit;
+  }
+  /* ========= toc start ========= */
+  .toc-position-container {
+    @apply fixed w-screen left-0 justify-center hidden bottom-14 pointer-events-none xl:flex;
+  }
+  .toc-position-container .toc-faker-content {
+    @apply w-[864px] flex justify-end;
+  }
+  .toc-position-container .toc-faker-content .toc-container {
+    @apply flex flex-col text-xs w-[240px] -mr-[250px] pointer-events-auto;
+  }
+  .toc-container a {
+    @apply text-xs line-clamp-1 text-zinc-400 hover:text-zinc-500 hover:no-underline dark:text-zinc-600 hover:dark:text-zinc-500;
+  }
+  .toc-container a.toc-h2 {
+    @apply font-medium mt-3;
+  }
+  .toc-container a.toc-h3 {
+    @apply flex items-center mt-2 gap-1 before:inline-block before:w-1 before:h-1 before:rounded-full before:bg-zinc-300 dark:before:bg-zinc-700;
+  }
+  /* ========= toc end ========= */
+}
+
+/* 配合深色模式切换动画 */
+::view-transition-old(root),
+::view-transition-new(root) {
+   animation: none;
+ }
